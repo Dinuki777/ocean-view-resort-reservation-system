@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Help Section - Ocean View Resort</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background:linear-gradient(135deg, #74b9ff, #0984e3);
+        margin: 0;
+        padding: 20px;
+    }
+    header {
+        background: url('https://via.placeholder.com/1200x400/0984e3/ffffff?text=Ocean+View+Resort') no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 100px 20px;
+        position: relative;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.4);
+        z-index: 1;
+    }
+    header h1, header p {
+        position: relative;
+        z-index: 2;
+        margin: 0;
+    }
+    header h1 {
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    nav {
+        background-color: rgba(0,0,0,0.8);
+        overflow: hidden;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+        background-color: #ddd;
+        color: black;
+        transform: scale(1.05);
+    }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+        color: #007bff;
+        border-bottom: 2px solid #007bff;
+        padding-bottom: 10px;
+    }
+    h3 {
+        color: #28a745;
+        margin-top: 25px;
+    }
+    .help-section {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 5px;
+        border-left: 4px solid #007bff;
+    }
+    ol {
+        line-height: 1.8;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    .note {
+        background: #fff3cd;
+        border-left: 4px solid #ffc107;
+        padding: 10px;
+        margin: 15px 0;
+    }
+    .contact-info {
+        background: #d4edda;
+        border-left: 4px solid #28a745;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+<header>
+    <h1>Ocean View Resort</h1>
+    <p>Beachside Hotel in Galle - Efficient Room Reservation System</p>
+</header>
+<nav>
+    <a href="Login.html">Login</a>
+    <a href="main.html">Home</a>
+    <a href="Add_New_Reservation.html">Add Reservation</a>
+    <a href="Display_Reservation_Details.html">Display Reservation</a>
+    <a href="Calculate_and_Print_Bill.html">Calculate Bill</a>
+    <a href="Help_Section.html">Help</a>
+    <a href="Exit.html">Exit</a>
+</nav>
+
+<div class="container">
+    <h2>Help Section - Staff Guidelines</h2>
+    <p>Welcome to the Ocean View Resort Reservation System! This guide will help new staff members navigate and use the system effectively.</p>
+    
+    <div class="help-section">
+        <h3>1. User Authentication (Login)</h3>
+        <ol>
+            <li>Enter your username and password on the login page.</li>
+            <li>Click the "Login" button to access the system.</li>
+            <li>If you forget your password, contact the system administrator.</li>
+            <li>Always log out when leaving the workstation.</li>
+        </ol>
+    </div>
+    
+    <div class="help-section">
+        <h3>2. Add New Reservation</h3>
+        <ol>
+            <li>Navigate to "Add Reservation" from the menu.</li>
+            <li>Fill in all required fields:
+                <ul>
+                    <li>Room Number (e.g., 101, 102, 201)</li>
+                    <li>Guest Name (full name as per ID)</li>
+                    <li>Address (complete residential address)</li>
+                    <li>Contact Number (mobile number)</li>
+                    <li>Room Type (Single/Double/Deluxe)</li>
+                    <li>Check-In Date (arrival date)</li>
+                    <li>Check-Out Date (departure date)</li>
+                </ul>
+            </li>
+            <li>Click "Add Reservation" to save the booking.</li>
+            <li>The system will auto-generate a unique Booking Number.</li>
+        </ol>
+    </div>
+    
+    <div class="help-section">
+        <h3>3. Display Reservation Details</h3>
+        <ol>
+            <li>Go to "Display Reservation" page.</li>
+            <li>All reservations are displayed in a table format.</li>
+            <li>To search for a specific reservation:
+                <ul>
+                    <li>Enter the Booking Number in the search box.</li>
+                    <li>Click "Find" to retrieve the record.</li>
+                </ul>
+            </li>
+            <li>To delete a reservation:
+                <ul>
+                    <li>Find the reservation using the Booking Number.</li>
+                    <li>Click "Delete" and confirm the action.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    
+    <div class="help-section">
+        <h3>4. Calculate and Print Bill</h3>
+        <ol>
+            <li>Navigate to "Calculate Bill" page.</li>
+            <li>Enter the Booking Number and Room Number.</li>
+            <li>Click "Search" to view reservation details.</li>
+            <li>Click "Calculate Bill" to compute the total cost.</li>
+            <li>Room rates:
+                <ul>
+                    <li>Single Room: Rs. 5,000 per night</li>
+                    <li>Double Room: Rs. 8,000 per night</li>
+                    <li>Deluxe Room: Rs. 12,000 per night</li>
+                </ul>
+            </li>
+            <li>The system calculates: (Number of Nights) × (Room Rate) = Total Price</li>
+        </ol>
+    </div>
+    
+    <div class="help-section">
+        <h3>5. Update Reservation</h3>
+        <ol>
+            <li>Go to "Add Reservation" page.</li>
+            <li>Enter the Booking Number in the search box.</li>
+            <li>Click "Find" to load the existing reservation.</li>
+            <li>Modify the required fields.</li>
+            <li>Click "Update" to save changes.</li>
+        </ol>
+    </div>
+    
+    <div class="note">
+        <strong>Important Notes:</strong>
+        <ul>
+            <li>Always verify guest identification before accepting reservations.</li>
+            <li>Ensure Check-Out date is after Check-In date.</li>
+            <li>Double-check room availability before confirming bookings.</li>
+            <li>Maintain guest confidentiality at all times.</li>
+            <li>Report any system errors to the IT department immediately.</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

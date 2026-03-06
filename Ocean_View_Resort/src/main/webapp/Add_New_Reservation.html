@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add New Reservation</title>
+</head>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            background:linear-gradient(135deg, #74b9ff, #0984e3);
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            background: url('https://via.placeholder.com/1200x400/0984e3/ffffff?text=Ocean+View+Resort') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 1;
+        }
+        header h1, header p {
+            position: relative;
+            z-index: 2;
+            margin: 0;
+        }
+        header h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        nav {
+            background-color: rgba(0,0,0,0.8);
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+            transform: scale(1.05);
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .radio-group {
+            margin-top: 5px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 15px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .button-group button {
+            flex: 1;
+            padding: 10px;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-add {
+            background-color: #28a745;
+        }
+        .btn-add:hover {
+            background-color: #218838;
+        }
+        .btn-update {
+            background-color: #ffc107;
+            color: #212529;
+        }
+        .btn-update:hover {
+            background-color: #e0a800;
+        }
+        .btn-find {
+            background-color: #17a2b8;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn-find:hover {
+            background-color: #138496;
+        }
+        .btn-clear {
+            background-color: #6c757d;
+        }
+        .btn-clear:hover {
+            background-color: #5a6268;
+        }
+        .status {
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status.success {
+            background-color: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .status.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+        .search-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .search-section h4 {
+            margin-top: 0;
+            color: #495057;
+        }
+    </style>
+<body>
+<header>
+<h1>Ocean View Resort</h1>
+        <p>Beachside Hotel in Galle - Efficient Room Reservation System</p>
+    </header>
+    <nav>
+        <a href="Login.html">Login</a>
+        <a href="main.html">Home</a>
+        <a href="Add_New_Reservation.html">Add Reservation</a>
+        <a href="Display_Reservation_Details.html">Display Reservation</a>
+        <a href="Calculate_and_Print_Bill.html">Calculate Bill</a>
+        <a href="Help_Section.html">Help</a>
+        <a href="Exit.html">Exit</a>
+    </nav>
+
+    <div class="container">
+        <h2>Add/Update Reservation</h2>
+        
+        <!-- Search Section -->
+        <div class="search-section">
+            <h4>Find Existing Reservation</h4>
+            <label for="searchBookingNo">Booking Number</label>
+            <div style="display: flex; gap: 10px;">
+                <input type="text" id="searchBookingNo" name="searchBookingNo" placeholder="Enter Booking Number">
+                <button type="button" class="btn-find" onclick="findReservation()" style="margin-top: 5px; width: auto;">Find</button>
+            </div>
+        </div>
+        
+        <form id="reservationForm">
+            <label for="bookingNumber">Booking Number</label>
+            <input type="text" id="bookingNumber" name="bookingNumber" readonly placeholder="Auto-generated for new">
+            
+            <label for="roomNumber">Room Number</label>
+            <input type="text" id="roomNumber" name="roomNumber" required>
+            
+            <label for="guestName">Guest Name</label>
+            <input type="text" id="guestName" name="guestName" required>
+            
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" required>
+            
+            <label for="contactNumber">Contact Number</label>
+            <input type="text" id="contactNumber" name="contactNumber" required>
+            
+            <label>Room Type</label>
+            <div class="radio-group">
+                <label><input type="radio" name="roomType" value="Single" required> Single</label>
+                <label><input type="radio" name="roomType" value="Double"> Double</label>
+                <label><input type="radio" name="roomType" value="Deluxe"> Deluxe</label>
+            </div>
+            
+            <label for="checkIn">Check-In Date</label>
+            <input type="date" id="checkIn" name="checkIn" required>
+            
+            <label for="checkOut">Check-Out Date</label>
+            <input type="date" id="checkOut" name="checkOut" required>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-add" onclick="submitForm('add')">Add Reservation</button>
+                <button type="button" class="btn-update" onclick="submitForm('update')">Update</button>
+                <button type="button" class="btn-clear" onclick="clearForm()">Clear</button>
+            </div>
+        </form>
+        
+        <div id="statusMessage" class="status"></div>
+    </div>
+
+    <script>
+        // Find reservation by booking number
+        function findReservation() {
+            const bookingNo = document.getElementById('searchBookingNo').value;
+            
+            if (!bookingNo) {
+                showStatus('Please enter a booking number!', 'error');
+                return;
+            }
+
+            fetch(`AddReservationServlet?action=find&bookingNo=${bookingNo}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        showStatus(data.error, 'error');
+                        clearForm();
+                    } else {
+                        // Populate form with found data
+                        document.getElementById('bookingNumber').value = data.booking_no;
+                        document.getElementById('roomNumber').value = data.room_number;
+                        document.getElementById('guestName').value = data.guest_name;
+                        document.getElementById('address').value = data.address;
+                        document.getElementById('contactNumber').value = data.contact_number;
+                        
+                        // Set room type radio button
+                        const roomTypeRadios = document.getElementsByName('roomType');
+                        for (let radio of roomTypeRadios) {
+                            if (radio.value === data.room_type) {
+                                radio.checked = true;
+                                break;
+                            }
+                        }
+                        
+                        document.getElementById('checkIn').value = data.check_in;
+                        document.getElementById('checkOut').value = data.check_out;
+                        
+                        showStatus('Reservation found! You can update the details.', 'success');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    showStatus('Error finding reservation!', 'error');
+                });
+        }
+
+        // Submit form for add or update
+        function submitForm(action) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const bookingNo = document.getElementById('bookingNumber').value;
+            
+            // For update, booking number must exist
+            if (action === 'update' && !bookingNo) {
+                showStatus('Please find a reservation first using the search box!', 'error');
+                return;
+            }
+
+            // Validate all fields
+            const roomNumber = document.getElementById('roomNumber').value;
+            const guestName = document.getElementById('guestName').value;
+            const address = document.getElementById('address').value;
+            const contactNumber = document.getElementById('contactNumber').value;
+            const roomType = document.querySelector('input[name="roomType"]:checked');
+            const checkIn = document.getElementById('checkIn').value;
+            const checkOut = document.getElementById('checkOut').value;
+
+            if (!roomNumber || !guestName || !address || !contactNumber || !roomType || !checkIn || !checkOut) {
+                showStatus('Please fill all fields!', 'error');
+                return;
+            }
+
+            // Create form data
+            const formData = new URLSearchParams();
+            formData.append('action', action);
+            if (bookingNo) formData.append('bookingNo', bookingNo);
+            formData.append('roomNumber', roomNumber);
+            formData.append('guestName', guestName);
+            formData.append('address', address);
+            formData.append('contactNumber', contactNumber);
+            formData.append('roomType', roomType.value);
+            formData.append('checkIn', checkIn);
+            formData.append('checkOut', checkOut);
+
+            // Submit to servlet
+            fetch('AddReservationServlet', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData.toString()
+            })
+            .then(response => response.text())
+            .then(message => {
+                showStatus(message, message.includes('Successfully') ? 'success' : 'error');
+                if (message.includes('Successfully') && action === 'add') {
+                    // Clear form after successful add
+                    clearForm();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showStatus('Error submitting form!', 'error');
+            });
+        }
+
+        // Clear form
+        function clearForm() {
+            document.getElementById('bookingNumber').value = '';
+            document.getElementById('searchBookingNo').value = '';
+            document.getElementById('roomNumber').value = '';
+            document.getElementById('guestName').value = '';
+            document.getElementById('address').value = '';
+            document.getElementById('contactNumber').value = '';
+            document.getElementById('checkIn').value = '';
+            document.getElementById('checkOut').value = '';
+            
+            // Clear radio buttons
+            const roomTypeRadios = document.getElementsByName('roomType');
+            for (let radio of roomTypeRadios) {
+                radio.checked = false;
+            }
+            
+            hideStatus();
+        }
+
+        // Show status message
+        function showStatus(message, type) {
+            const statusEl = document.getElementById('statusMessage');
+            statusEl.textContent = message;
+            statusEl.className = 'status ' + type;
+        }
+
+        // Hide status message
+        function hideStatus() {
+            document.getElementById('statusMessage').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="C:/Users/DELL/Documents/mysql-connector-j-8.0.33/mysql-connector-j-8.0.33.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/jdk-22.0.2_doc-all.zip"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_121/lib/tools.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_121/lib/ant-javafx.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_121/lib/dt.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_121/lib/javafx-mx.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_121/lib/jconsole.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_121/lib/packager.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk1.8.0_121/lib/sa-jdi.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/jakarta.persistence-2.2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.antlr-2.7.10.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.asm-9.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.core-2.7.10.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.jpql-2.7.10.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.jpa.modelgen.processor-2.7.10.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.jpa-2.7.10.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/NetBeans-17/netbeans/java/modules/ext/eclipselink/org.eclipse.persistence.moxy-2.7.10.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/DELL/Documents/20251224 source code.zip"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/DELL/Documents/apache-tomcat-9.0.115/lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DELL/Documents/apache-tomcat-9.0.115/bin/bootstrap.jar"/>
+	<classpathentry kind="lib" path="C:/Users/DELL/apache-tomcat-9.0.100/bin/commons-daemon.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0 (2)"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/6"/>
+	<classpathentry kind="lib" path="C:/Program Files/jdk-17.0.12_windows-x64_bin.zip"/>
+	<classpathentry kind="lib" path="C:/Program Files/JUnit 6.0.3 source code.zip"/>
+	<classpathentry kind="lib" path="C:/Program Files/mockito-core-4.6.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/mockito-core-5.22.0-javadoc.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>
