@@ -132,7 +132,7 @@ Open **Eclipse IDE** and import the project as a **Dynamic Web Project**.
 Create a MySQL database:
 
 ```
-ocean_view_resort_db
+hotel_db
 ```
 
 Then import the provided SQL file.
