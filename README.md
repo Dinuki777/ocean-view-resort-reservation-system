@@ -220,9 +220,4 @@ Features include:
 Undergraduate – Software Engineering
 
 GitHub:
-[https://github.com/Dinuki777](https://github.com/Dinuki777)
-
-
-
-These will make your project **much stronger for software engineering internships.**
 https://github.com/Dinuki777
